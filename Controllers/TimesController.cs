@@ -55,6 +55,8 @@ namespace Times.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nome,CPF,Descricao,Valor")] Time time)
         {
+            
+            
             if (ModelState.IsValid)
             {
                 _context.Add(time);

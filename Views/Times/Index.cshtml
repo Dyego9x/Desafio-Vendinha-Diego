@@ -6,7 +6,8 @@
 
 <header class="p-4 pb-4 mb-4 border-bottom">
         <a href="/frontend/index.html" class="d-flex align-items-center text-dark text-decoration-none">
-            <img src="http://www.interfocus.com.br/Content/images/logo_interfocus_default_bottom.png" alt="logo" width="165"> 
+            <img src="http://www.interfocus.com.br/Content/images/logo_interfocus_default_bottom.png" alt="logo" width="165">
+ 
             <span class="fs-4">&nbsp Vendinha Interfocus</span>
         </a>
 </header>
@@ -17,6 +18,9 @@
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
@@ -35,6 +39,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
