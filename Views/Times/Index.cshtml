@@ -1,0 +1,58 @@
+@model IEnumerable<Times.Models.Time>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<header class="p-4 pb-4 mb-4 border-bottom">
+        <a href="/frontend/index.html" class="d-flex align-items-center text-dark text-decoration-none">
+            <img src="http://www.interfocus.com.br/Content/images/logo_interfocus_default_bottom.png" alt="logo" width="165"> 
+            <span class="fs-4">&nbsp Vendinha Interfocus</span>
+        </a>
+</header>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Adicionar nova dívida</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CPF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CPF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Quitar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

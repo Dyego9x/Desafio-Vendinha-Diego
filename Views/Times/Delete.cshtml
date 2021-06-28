@@ -1,0 +1,40 @@
+@model Times.Models.Time
+
+@{
+    ViewData["Title"] = "Quitar";
+}
+
+<h1>Quitar</h1>
+
+<h3>você tem certeza que deseja quitar a dívida deste cliente?</h3>
+<div>
+    <br>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CPF)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CPF)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Quitar" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-info">Voltar para a listagem</a>
+    </form>
+</div>
