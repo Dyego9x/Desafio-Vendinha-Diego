@@ -49,8 +49,7 @@ namespace Times.Controllers
         }
 
         // POST: Times/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // Adicionando os campos preenchidos no banco
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nome,CPF,Descricao,Valor")] Time time)
@@ -67,6 +66,7 @@ namespace Times.Controllers
         }
 
         // GET: Times/Edit/5
+        // Editando os dados via tela
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -83,8 +83,7 @@ namespace Times.Controllers
         }
 
         // POST: Times/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // Editando os dados via tela
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,CPF,Descricao,Valor")] Time time)
@@ -118,6 +117,7 @@ namespace Times.Controllers
         }
 
         // GET: Times/Delete/5
+        // Excluindo os dados
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -136,6 +136,7 @@ namespace Times.Controllers
         }
 
         // POST: Times/Delete/5
+        // Apagando os dados do banco
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
