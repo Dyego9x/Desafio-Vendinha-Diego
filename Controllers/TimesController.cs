@@ -26,19 +26,18 @@ namespace Times.Controllers
         }
 
         // GET: Times/Details/5
-        public IActionResult Details(int? id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var time = _context.Time;
+            var time = await _context.Time.FindAsync(id);
             if (time == null)
             {
                 return NotFound();
             }
-
             return View(time);
         }
 
