@@ -14,7 +14,7 @@
 
 <h1>Quitar Dívida</h1>
 
-<h3>você tem certeza que deseja quitar a dívida deste cliente?</h3>
+<h3>Você tem certeza que deseja quitar a dívida deste cliente?</h3>
 <div>
     <br>
     <h4>Cliente</h4>
@@ -38,11 +38,18 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Descricao)
         </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Valor)
     </dl>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Quitar" class="btn btn-danger" /> |
+        <input type="submit" value="Quitar" class="btn btn-danger" /> 
+            <br>
+            <br>
         <a asp-action="Index" class="btn btn-info">Voltar para a listagem</a>
     </form>
 </div>
